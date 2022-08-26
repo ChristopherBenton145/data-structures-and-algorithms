@@ -2,16 +2,13 @@ class HashSet {
   constructor(elements = []) {
     if (!Array.isArray(elements)) throw new Error(`Iterator value ${elements} is not an entry object`);
     this.elements = {};
-    this.size = 0;
+    this.length = 0;
 
-    for (let i = 0; i < elements.length; i++) {
-      if (!this.has(elements[i])) this.size++;
-      this.elements[elements[i]] = elements[i];
-    }
+    for (let i = 0; i < elements.length; i++) this.add(elements[i], elements[i]);
   }
 
   add(value) {
-    if (!this.has(value)) this.size++;
+    if (!this.has(value)) this.length++;
     this.elements[value] = value;
   }
 
@@ -22,7 +19,7 @@ class HashSet {
   delete(value) {
     if (!this.has(value)) return false;
     delete this.elements[value];
-    this.size--;
+    this.length--;
 
     return true;
   }
@@ -33,7 +30,7 @@ class HashSet {
 
   clear() {
     this.elements = {};
-    this.size = 0;
+    this.length = 0;
   }
 }
 

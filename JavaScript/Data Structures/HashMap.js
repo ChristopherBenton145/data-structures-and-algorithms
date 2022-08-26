@@ -2,17 +2,16 @@ class HashMap {
   constructor(elements = []) {
     if (!Array.isArray(elements)) throw new Error(`Iterator value ${elements} is not an entry object`);
     this.elements = {};
-    this.size = 0;
+    this.length = 0;
 
     for (let i = 0; i < elements.length; i++) {
       if (!Array.isArray(elements[i])) throw new Error(`Iterator value ${elements[i]} is not an entry object`);
-      if (!this.has(elements[i][0])) this.size++;
-      this.elements[elements[i][0]] = elements[i][1];
+      this.set(elements[i][0], elements[i][1]);
     }
   }
 
   set(key, value) {
-    if (!this.has(key)) this.size++;
+    if (!this.has(key)) this.length++;
     this.elements[key] = value;
   }
 
@@ -27,7 +26,7 @@ class HashMap {
   delete(key) {
     if (!this.has(key)) return false;
     delete this.elements[key];
-    this.size--;
+    this.length--;
 
     return true;
   }
@@ -38,7 +37,7 @@ class HashMap {
 
   clear() {
     this.elements = {};
-    this.size = 0;
+    this.length = 0;
   }
 }
 
