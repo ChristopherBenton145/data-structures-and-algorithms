@@ -10,6 +10,8 @@
   <h2>JavaScript</h2>
   <h3>Data Structures</h3>
   <ul>
+    <li><a href="https://github.com/ChristopherBenton145/data-structures-and-algorithms/blob/main/JavaScript/Data%20Structures/Stack.js">Stack</a></li>
+    <li><a href="https://github.com/ChristopherBenton145/data-structures-and-algorithms/blob/main/JavaScript/Data%20Structures/Queue.js">Queue</a></li>
     <li><a href="https://github.com/ChristopherBenton145/data-structures-and-algorithms/blob/main/JavaScript/Data%20Structures/HashMap.js">HashMap</a></li>
     <li><a href="https://github.com/ChristopherBenton145/data-structures-and-algorithms/blob/main/JavaScript/Data%20Structures/HashSet.js">HashSet</a></li>
   </ul>
