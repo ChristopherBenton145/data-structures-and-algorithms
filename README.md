@@ -14,6 +14,8 @@
     <li><a href="https://github.com/ChristopherBenton145/data-structures-and-algorithms/blob/main/JavaScript/Data%20Structures/Queue.js">Queue</a></li>
     <li><a href="https://github.com/ChristopherBenton145/data-structures-and-algorithms/blob/main/JavaScript/Data%20Structures/HashMap.js">HashMap</a></li>
     <li><a href="https://github.com/ChristopherBenton145/data-structures-and-algorithms/blob/main/JavaScript/Data%20Structures/HashSet.js">HashSet</a></li>
+    <li><a href="https://github.com/ChristopherBenton145/data-structures-and-algorithms/blob/main/JavaScript/Data%20Structures/SinglyLinkedList.js">Singly Linked List</a></li>
+    <li><a href="https://github.com/ChristopherBenton145/data-structures-and-algorithms/blob/main/JavaScript/Data%20Structures/DoublyLinkedList.js">Doubly Linked List</a></li>
   </ul>
    <h3>Algorithms</h3>
   <ul>
