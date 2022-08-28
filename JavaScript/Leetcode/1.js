@@ -5,6 +5,7 @@
  * @return {number[]}
  */
 
+// Time: O(n) | Space: O(n)
 function twoSum(nums, target) {
   let map = new Map();
   
