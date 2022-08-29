@@ -8,8 +8,8 @@ class Node {
 class SinglyLinkedList {
   constructor(elements = []) {
     if (!Array.isArray(elements)) throw new Error(`Iterator value ${elements} is not an entry object`);
-    this.head = undefined;
-    this.tail = undefined;
+    this.head = null;
+    this.tail = null;
     this.length = 0;
 
     for (let i = 0; i < elements.length; i++) this.append(elements[i]);
@@ -42,8 +42,8 @@ class SinglyLinkedList {
   }
 
   removeFirst() {
-    if (!this.head) return undefined;
-    if (!this.head.next) this.tail = undefined;
+    if (!this.head) return null;
+    if (!this.head.next) this.tail = null;
     const head = this.head;
     this.head = this.head.next;
     this.length--;
@@ -52,14 +52,14 @@ class SinglyLinkedList {
   }
 
   removeLast() {
-    if (!this.head) return undefined;
+    if (!this.head) return null;
     if (!this.head.next) return this.removeFirst();
     let node = this.head;
 
     while (node.next.next) node = node.next;
 
     const tail = this.tail;
-    node.next = undefined;
+    node.next = null;
     this.tail = node;
     this.length--;
 
@@ -82,7 +82,7 @@ class SinglyLinkedList {
 
   reverse() {
     let node = this.head;
-    let previous = undefined;
+    let previous = null;
 
     while (node) {
       const next = node.next;
@@ -108,8 +108,8 @@ class SinglyLinkedList {
   }
 
   clear() {
-    this.head = undefined;
-    this.tail = undefined;
+    this.head = null;
+    this.tail = null;
     this.length = 0;
   }
 }

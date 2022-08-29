@@ -8,14 +8,14 @@ class Node {
 class Stack {
   constructor(elements = []) {
     if (!Array.isArray(elements)) throw new Error(`Iterator value ${elements} is not an entry object`);
-    this.head = undefined;
+    this.head = null;
     this.length = 0;
 
     for (let i = 0; i < elements.length; i++) this.push(elements[i]);
   }
 
   peek() {
-    return (this.head) ? this.head.value : undefined;
+    return (this.head) ? this.head.value : null;
   }
 
   push(value) {
@@ -24,7 +24,7 @@ class Stack {
   }
 
   pop() {
-    if (!this.length) return undefined;
+    if (!this.length) return null;
     const element = this.head;
     this.head = this.head.next;
     this.length--;
@@ -35,9 +35,9 @@ class Stack {
   elementAt(index) {
     let node = this.head;
 
-    while (index-- && node !== undefined) node = node.next;
+    while (index-- && node !== null) node = node.next;
 
-    return (node) ? node.value : undefined;
+    return (node) ? node.value : null;
   }
 
   forEach(_function) {
@@ -50,7 +50,7 @@ class Stack {
     const array = [];
     let node = this.head;
 
-    while (node !== undefined) {
+    while (node !== null) {
       array.push(node.value);
       node = node.next;
     }
@@ -59,7 +59,7 @@ class Stack {
   }
 
   clear() {
-    this.head = undefined;
+    this.head = null;
     this.length = 0;
   }
 }

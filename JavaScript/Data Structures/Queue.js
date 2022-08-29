@@ -8,15 +8,15 @@ class Node {
 class Queue {
   constructor(elements = []) {
     if (!Array.isArray(elements)) throw new Error(`Iterator value ${elements} is not an entry object`);
-    this.head = undefined;
-    this.tail = undefined;
+    this.head = null;
+    this.tail = null;
     this.length = 0;
 
     for (let i = 0; i < elements.length; i++) this.enqueue(elements[i]);
   }
 
   peek() {
-    return (this.head) ? this.head.value : undefined;
+    return (this.head) ? this.head.value : null;
   }
 
   enqueue(value) {
@@ -28,8 +28,8 @@ class Queue {
   }
 
   dequeue() {
-    if (!this.head) return undefined;
-    if (!this.head.next) this.tail = undefined;
+    if (!this.head) return null;
+    if (!this.head.next) this.tail = null;
     const element = this.head;
     this.head = this.head.next;
     this.length--;
@@ -40,16 +40,16 @@ class Queue {
   elementAt(index) {
     let node = this.head;
 
-    while (index-- && node !== undefined) node = node.next;
+    while (index-- && node !== null) node = node.next;
 
-    return (node) ? node.value : undefined;
+    return (node) ? node.value : null;
   }
 
   forEach(_function) {
     let node = this.head;
     let index = 0;
 
-    while (node !== undefined) {
+    while (node !== null) {
       _function(node.value, index);
       node = node.next;
       index++;
@@ -60,7 +60,7 @@ class Queue {
     const array = [];
     let node = this.head;
 
-    while (node !== undefined) {
+    while (node !== null) {
       array.push(node.value);
       node = node.next;
     }
@@ -69,8 +69,8 @@ class Queue {
   }
 
   clear() {
-    this.head = undefined;
-    this.tail = undefined;
+    this.head = null;
+    this.tail = null;
     this.length = 0;
   }
 }

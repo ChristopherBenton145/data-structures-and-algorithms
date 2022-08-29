@@ -9,8 +9,8 @@ class Node {
 class DoublyLinkedList {
   constructor(elements = []) {
     if (!Array.isArray(elements)) throw new Error(`Iterator value ${elements} is not an entry object`);
-    this.head = undefined;
-    this.tail = undefined;
+    this.head = null;
+    this.tail = null;
     this.length = 0;
 
     for (let i = 0; i < elements.length; i++) this.append(elements[i]);
@@ -25,7 +25,7 @@ class DoublyLinkedList {
   }
 
   append(value) {
-    this.tail = new Node(value, undefined, this.tail);
+    this.tail = new Node(value, null, this.tail);
     this.length++;
 
     if (this.tail.previous) this.tail.previous.next = this.tail;
@@ -45,8 +45,8 @@ class DoublyLinkedList {
   }
 
   removeFirst() {
-    if (!this.head) return undefined;
-    (!this.head.next) ? this.tail = undefined : this.head.next.previous = undefined;
+    if (!this.head) return null;
+    (!this.head.next) ? this.tail = null : this.head.next.previous = null;
     const node = this.head;
     this.head = this.head.next;
     this.length--;
@@ -55,8 +55,8 @@ class DoublyLinkedList {
   }
 
   removeLast() {
-    if (!this.tail) return undefined;
-    (!this.tail.previous) ? this.head = undefined : this.tail.previous.next = undefined;
+    if (!this.tail) return null;
+    (!this.tail.previous) ? this.head = null : this.tail.previous.next = null;
     const node = this.tail;
     this.tail = this.tail.previous;
     this.length--;
@@ -80,7 +80,7 @@ class DoublyLinkedList {
 
   reverse() {
     let node = this.head;
-    let previous = undefined;
+    let previous = null;
 
     while (node) {
       const next = node.next;
@@ -106,8 +106,8 @@ class DoublyLinkedList {
   }
 
   clear() {
-    this.head = undefined;
-    this.tail = undefined;
+    this.head = null;
+    this.tail = null;
     this.length = 0;
   }
 }
